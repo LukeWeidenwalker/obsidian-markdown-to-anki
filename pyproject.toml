@@ -13,6 +13,10 @@ dependencies = [
 [tool.setuptools]
 packages = ["markdown_to_anki"]
 
+[tool.pytest]
+testpaths = ["markdown_to_anki/tests"]
+python_files = "test_*.py"
+
 [dependency-groups]
 dev = [
     "pytest>=8.3.5",

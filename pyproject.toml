@@ -1,0 +1,19 @@
+[project]
+name = "obsidian-markdown-to-anki"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "anki>=25.2",
+    "gooey>=1.0.8.1",
+    "markdown>=3.8",
+]
+
+[tool.setuptools]
+packages = ["markdown_to_anki"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]

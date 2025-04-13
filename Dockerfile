@@ -80,17 +80,19 @@ ENV QT_DEBUG_PLUGINS 1
 # CMD /bin/bash -c "anki"
 
 # # set version label
-ARG OBSIDIAN_VERSION=1.5.3
+ARG OBSIDIAN_VERSION=1.8.9
 
 RUN \
     echo "**** download obsidian ****" && \
     curl \
-    https://github.com/obsidianmd/obsidian-releases/releases/download/v$OBSIDIAN_VERSION/Obsidian-$OBSIDIAN_VERSION.AppImage \
+    https://github.com/obsidianmd/obsidian-releases/releases/download/v$OBSIDIAN_VERSION/Obsidian-$OBSIDIAN_VERSION-arm64.AppImage \
     -L \
     -o ./obsidian.AppImage
 
 RUN \
     echo "**** extract obsidian ****" && \
+    apt-get update -y && \
+    apt-get install -y zlib1g-dev && \
     chmod +x ./obsidian.AppImage && \
     ./obsidian.AppImage --appimage-extract
 

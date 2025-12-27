@@ -14,7 +14,7 @@ packages = ["markdown_to_anki"]
 
 [tool.pytest]
 testpaths = ["markdown_to_anki/tests"]
-python_files = "test_*.py"
+python_files = ["test_*.py"]
 
 [dependency-groups]
 dev = [
